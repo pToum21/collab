@@ -5,66 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookies Bank</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
+    <div class="container">
+        <nav class="nav-extended">
 
-    <nav class="nav-extended">
+            <div>
+                <img class="brand-logo"
+                    src="./assets/photos/Bookies Bank Img.svg - Personal - Microsoft​ Edge 9_26_2023 10_19_42 PM.png " />
 
-        <div>
-            <img class="brand-logo"
-                src="./assets/photos/Bookies Bank Img.svg - Personal - Microsoft​ Edge 9_26_2023 10_19_42 PM.png " />
+                <p id="logo-text">Bookies Bank</p>
+            </div>
+            <div class="nav-content">
+                <div class="nav-wrapper">
+                    <ul class="tabs tabs-transparent">
+                        <li class="tab"><a href="#test1">Basketball</a></li>
+                        <li class="tab"><a class="active" href="#test2">American Football</a></li>
+                        <li class="tab disabled"><a href="#test3">Hockey</a></li>
+                        <li class="tab"><a href="#test4">College Football</a></li>
+                        <li class="tab"><a href="#test5">Golf</a></li>
+                        <li class="tab"><a href="#test6">BaseBall</a></li>
+                        <li class="tab"><a href="#test7">Soccer</a></li>
 
-            <p id="logo-text">Bookies Bank</p>
-        </div>
-        <div class="nav-content">
+                    </ul>
+                </div>
+                <form id="search-area">
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        
+                    </div>
+                </form>
+            </div>
+        </nav>
 
-            <ul class="tabs tabs-transparent">
-                <li class="tab"><a href="#test1">Basketball</a></li>
-                <li class="tab"><a class="active" href="#test2">American Football</a></li>
-                <li class="tab disabled"><a href="#test3">Hockey</a></li>
-                <li class="tab"><a href="#test4">College Football</a></li>
-                <li class="tab"><a href="#test5">Golf</a></li>
-                <li class="tab"><a href="#test6">BaseBall</a></li>
-                <li class="tab"><a href="#test7">Soccer</a></li>
-            </ul>
-        </div>
-    </nav>
+        <div class="row">
 
-    <div class="row">
+            <div id="side-bar" class="col s12 m4 l3">
+                <!-- left side bar -->
+                <h1>Leagues</h1>
+                <div id="side-bar-btns" class="col s12 m6 l1 ">
+                    <button class="waves-effect waves-light btn side-btns" href="">NBA</button>
+                    <button class="waves-effect waves-light btn side-btns" href="">NFL</button>
+                    <button class="waves-effect waves-light btn side-btns" href="">NHL</button>
+                    <button class="waves-effect waves-light btn side-btns" href="">MLB</button>
+                    <button class="waves-effect waves-light btn side-btns" href="">PGA</button>
+                    <button class="waves-effect waves-light btn side-btns" href="">MSL</button>
+                    <button class="waves-effect waves-light btn side-btns" href="">NCAA</button>
 
-        <div class="col s12 m4 l3">
-            <!-- left side bar -->
-            <h1>Leagues</h1>
-            <div id="side-bar" class="col s12 m6 l1 ">
-                <button class="waves-effect waves-light btn side-btns" href="">All</button>
-                <button class="waves-effect waves-light btn side-btns" href="">Live</button>
-                <button class="waves-effect waves-light btn side-btns" href="">Odds</button>
-                <button class="waves-effect waves-light btn side-btns" href="">Scheduled</button>
+                </div>
+            </div>
+
+            <div class="col s12 m8 l9">
+                <!-- main content middle -->
+                <h2 col s12 id="main-section-nav-bar">
+                    <button class="waves-effect waves-light btn main-btns" href="">All</button>
+                    <button class="waves-effect waves-light btn main-btns" href="">Live</button>
+                    <button class="waves-effect waves-light btn main-btns" href="">Odds</button>
+                    <button class="waves-effect waves-light btn main-btns" href="">Scheduled</button>
+
+                </h2>
+                <div col s12 m8 l9>
+                    <!-- generate game content here using js-->
+                    <!-- filer content for what will most likley be cards that hold each game and the info on them -->
+                    <div id="game-area">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, doloribus porro? Pariatur sit
+                            possimus
+                            repellendus at natus maiores, voluptas blanditiis illum doloremque quos ex ad obcaecati
+                            aliquam?
+                            Quisquam, eveniet obcaecati.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas consectetur iste, veniam
+                            laboriosam
+                            accusantium debitis provident dolorem aperiam explicabo architecto sequi, sint autem,
+                            consequatur
+                            beatae maxime! Maxime suscipit iusto praesentium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur hic enim at optio mollitia
+                            vel,
+                            neque deleniti? Saepe quis labore aliquam nihil. Atque id sit explicabo fugit at iusto fuga.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam itaque saepe minus esse,
+                            at,
+                            quisquam recusandae ducimus ullam accusantium unde quod nihil eveniet maxime sed assumenda
+                            expedita
+                            nulla sequi sit!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, doloribus porro? Pariatur sit
+                            possimus
+                            repellendus at natus maiores, voluptas blanditiis illum doloremque quos ex ad obcaecati
+                            aliquam?
+                            Quisquam, eveniet obcaecati.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas consectetur iste, veniam
+                            laboriosam
+                            accusantium debitis provident dolorem aperiam explicabo architecto sequi, sint autem,
+                            consequatur
+                            beatae maxime! Maxime suscipit iusto praesentium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur hic enim at optio mollitia
+                            vel,
+                            neque deleniti? Saepe quis labore aliquam nihil. Atque id sit explicabo fugit at iusto fuga.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam itaque saepe minus esse,
+                            at,
+                            quisquam recusandae ducimus ullam accusantium unde quod nihil eveniet maxime sed assumenda
+                            expedita
+                            nulla sequi sit!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, doloribus porro? Pariatur sit
+                            possimus
+                            repellendus at natus maiores, voluptas blanditiis illum doloremque quos ex ad obcaecati
+                            aliquam?
+                            Quisquam, eveniet obcaecati.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas consectetur iste, veniam
+                            laboriosam
+                            accusantium debitis provident dolorem aperiam explicabo architecto sequi, sint autem,
+                            consequatur
+                            beatae maxime! Maxime suscipit iusto praesentium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur hic enim at optio mollitia
+                            vel,
+                            neque deleniti? Saepe quis labore aliquam nihil. Atque id sit explicabo fugit at iusto fuga.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam itaque saepe minus esse,
+                            at,
+                            quisquam recusandae ducimus ullam accusantium unde quod nihil eveniet maxime sed assumenda
+                            expedita
+                            nulla sequi sit!</p>
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
-        <div class="col s12 m8 l9">
-            <!-- main content middle -->
-            <h2 col s12>
-                <button class="waves-effect waves-light btn" href="">All</button>
-                <button class="waves-effect waves-light btn" href="">Live</button>
-                <button class="waves-effect waves-light btn" href="">Odds</button>
-                <button class="waves-effect waves-light btn" href="">Scheduled</button>
-
-            </h2>
-            <div col s12 m8 l9>
-                <!-- generate game content here -->
-            </div>
-
-        </div>
-
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

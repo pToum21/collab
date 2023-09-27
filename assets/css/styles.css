@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: red solid 2px
-}
+} */
 
 .brand-logo {
     width: 75px;
@@ -8,21 +8,61 @@
 }
 
 #logo-text {
-    padding-left: 6%;
+    padding-left: 7%;
     margin: 0;
+    font-size: 25px;
 }
 
 h1 {
     display: flex;
     justify-content: center;
 }
-
 #side-bar {
+    border: 2px solid red;
+    margin-top: 36px;
+}
+
+#side-bar-btns {
     width: 100%;
 }
 
 .side-btns {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
+}
+
+h2 {
+    border: 2px solid red;
+}
+
+.main-btns {
+    width: 15%;
+    margin: 10px;
+
+}
+
+#search-area  {
+    margin-bottom: 20px;
+}
+
+#search {
+    margin-left: 45px;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center; 
+}
+
+.tabs {
+    flex: 1; 
+}
+
+.input-field {
+    margin-left: 10px; 
+}
+
+#game-area {
+    border: 2px solid red;
 }
