@@ -16,6 +16,7 @@
 h1 {
     display: flex;
     justify-content: center;
+    margin: 0 0 15px 0;
 }
 #side-bar {
     border: 2px solid red;
