@@ -22,30 +22,45 @@
         <div class="nav-content">
 
             <ul class="tabs tabs-transparent">
-                <li class="tab"><a href="#test1">NBA</a></li>
-                <li class="tab"><a class="active" href="#test2">NFL</a></li>
-                <li class="tab disabled"><a href="#test3">NHL</a></li>
+                <li class="tab"><a href="#test1">Basketball</a></li>
+                <li class="tab"><a class="active" href="#test2">American Football</a></li>
+                <li class="tab disabled"><a href="#test3">Hockey</a></li>
                 <li class="tab"><a href="#test4">College Football</a></li>
-                <li class="tab"><a href="#test5">MLB</a></li>
-                <li class="tab"><a href="#test6">UFC</a></li>
+                <li class="tab"><a href="#test5">Golf</a></li>
+                <li class="tab"><a href="#test6">BaseBall</a></li>
                 <li class="tab"><a href="#test7">Soccer</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container" id="main-panel">
-        <div class="row ">
-            <div class="col s5 push-s6">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat aliquam voluptates
-                    quibusdam similique non adipisci recusandae natus, quae totam nam numquam commodi ullam quos porro
-                    nemo. Architecto, laudantium voluptates?</p>
-            </div>
-            <div class="col s5 pull-s5">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit dignissimos expedita quaerat et!
-                    Distinctio perferendis consequuntur odio ab fuga quidem molestias? Labore sit tenetur autem, maiores
-                    laborum ut molestias id.</p>
+    <div class="row">
+
+        <div class="col s12 m4 l3">
+            <!-- left side bar -->
+            <h1>Leagues</h1>
+            <div id="side-bar" class="col s12 m6 l1 ">
+                <button class="waves-effect waves-light btn side-btns" href="">All</button>
+                <button class="waves-effect waves-light btn side-btns" href="">Live</button>
+                <button class="waves-effect waves-light btn side-btns" href="">Odds</button>
+                <button class="waves-effect waves-light btn side-btns" href="">Scheduled</button>
             </div>
         </div>
+
+        <div class="col s12 m8 l9">
+            <!-- main content middle -->
+            <h2 col s12>
+                <button class="waves-effect waves-light btn" href="">All</button>
+                <button class="waves-effect waves-light btn" href="">Live</button>
+                <button class="waves-effect waves-light btn" href="">Odds</button>
+                <button class="waves-effect waves-light btn" href="">Scheduled</button>
+
+            </h2>
+            <div col s12 m8 l9>
+                <!-- generate game content here -->
+            </div>
+
+        </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -12,7 +12,17 @@
     margin: 0;
 }
 
-#main-panel {
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#side-bar {
+    width: 100%;
+}
+
+.side-btns {
+    width: 100%;
     margin-top: 10px;
-    
+    margin-bottom: 10px;
 }
