@@ -1,0 +1,12 @@
+* {
+    outline: red solid 2px
+}
+
+.brand-logo {
+    width: 75px;
+    height: 60px;
+}
+
+#logo-text {
+    padding-left: 6%;
+}
