@@ -9,4 +9,10 @@
 
 #logo-text {
     padding-left: 6%;
+    margin: 0;
+}
+
+#main-panel {
+    margin-top: 10px;
+    
 }
