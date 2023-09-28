@@ -12,6 +12,10 @@
     margin: 0;
     font-size: 25px;
 }
+#nav-bar-items{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 h1 {
     display: flex;
