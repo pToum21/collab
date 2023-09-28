@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookies Bank</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
@@ -14,74 +13,105 @@
     <!-- container that wraps the whole page -->
 
     <!-- nav bar/header -->
-    <nav class="nav-extended">
-        <!-- logo and logo text -->
-        <div>
-            <img class="brand-logo"
-                src="./assets/photos/Bookies Bank Img.svg - Personal - Microsoft​ Edge 9_26_2023 10_19_42 PM.png " />
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="./assets/photos/Bookies Bank Img.svg - Personal - Microsoft​ Edge 9_26_2023 10_19_42 PM.png">
+            </a>
 
-            <p id="logo-text">Bookies Bank</p>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div id="#nav-bar-items" class="nav-content col s12 m12 l3">
-            <div class="nav-wrapper">
-                <!-- nav bar tabs -->
-                <ul class="tabs tabs-transparent left hide-on-small-and-down">
-                    <li class="tab btn-large nav-buttons"><a href="#test1">Basketball</a></li>
-                    <li class="tab btn-large nav-buttons"><a href="#test2">American Football</a></li>
-                    <li class="tab btn-large nav-buttons"><a href="#test3">Hockey</a></li>
-                    <li class="tab btn-large nav-buttons"><a href="#test4">College Football</a></li>
-                    <li class="tab btn-large nav-buttons"><a href="#test5">Golf</a></li>
-                    <li class="tab btn-large nav-buttons"><a href="#test6">BaseBall</a></li>
-                    <li class="tab btn-large nav-buttons"><a href="#test7">Soccer</a></li>
 
-                </ul>
-            </div>
-            <!-- search bar  -->
-            <form id="search-area">
-                <div class="input-field">
-                    <ul>
-                        <li><a class="btn-floating btn-large cyan pulse" href="sass.html"><i
-                                    class="material-icons">search</i></a></li>
-                    </ul>
+        <div id="navbarBasicExample" class="navbar-menu">
 
+            <a class="navbar-item">
+                Basketball
+            </a>
 
+            <a class="navbar-item">
+                Hockey
+            </a>
+            <a class="navbar-item">
+                FootBall
+            </a>
+
+            <a class="navbar-item">
+                Soccer
+            </a>
+
+            <a class="navbar-item">
+                Golf
+            </a>
+
+            <a class="navbar-item">
+                BaseBall
+
+            </a>
+
+            <a class="navbar-item">
+                Tennis
+            </a>
+
+            <!-- search bar -->
+            <div class="navbar-end ">
+                <div class="navbar-item ">
+                    <form id="search-area ">
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Search">
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </nav>
 
 
 
-    <div class="row">
+    </nav>
 
-        <div id="side-bar" class="col s12 m4 l3">
+    <div class="columns">
+        <div id="side-bar" class="column is-3">
             <!-- left side bar -->
             <h1>Leagues</h1>
-            <div id="side-bar-btns" class="col s12 m6 l1 ">
+            <div id="side-bar-btns">
                 <!-- league buttons that are on the left side of the page -->
-                <button class="waves-effect waves-light btn side-btns" href="">NBA</button>
-                <button class="waves-effect waves-light btn side-btns" href="">NFL</button>
-                <button class="waves-effect waves-light btn side-btns" href="">NHL</button>
-                <button class="waves-effect waves-light btn side-btns" href="">MLB</button>
-                <button class="waves-effect waves-light btn side-btns" href="">PGA</button>
-                <button class="waves-effect waves-light btn side-btns" href="">MSL</button>
-                <button class="waves-effect waves-light btn side-btns" href="">NCAA</button>
-
+                <button class="button is-link side-btns">NBA</button>
+                <button class="button is-link side-btns">NFL</button>
+                <button class="button is-link side-btns">NHL</button>
+                <button class="button is-link side-btns">MLB</button>
+                <button class="button is-link side-btns">PGA</button>
+                <button class="button is-link side-btns">MSL</button>
+                <button class="button is-link side-btns">NCAA</button>
             </div>
         </div>
 
-        <div class="col s12 m8 l9">
+        <div id="main-area" class="column is-9">
             <!-- main content middle -->
-            <h2 col s12 id="main-section-nav-bar">
+            <h2 id="main-section-nav-bar">
                 <!-- btns that are in the top middle of the page -->
-                <button class="waves-effect waves-light btn main-btns" href="">All</button>
-                <button class="waves-effect waves-light btn main-btns" href="">Live</button>
-                <button class="waves-effect waves-light btn main-btns" href="">Odds</button>
-                <button class="waves-effect waves-light btn main-btns" href="">Scheduled</button>
-
+                <button class="button is-link main-btns">All</button>
+                <button class="button is-link main-btns">Live</button>
+                <button class="button is-link main-btns">Odds</button>
+                <button class="button is-link main-btns">Scheduled</button>
             </h2>
-            <div col s12 m8 l9>
+            <div>
                 <!-- generate game content here using js-->
+
+                <!-- filter content for what will most likely be cards that hold each game and the info on them -->
+
+                <!-- Game content goes here -->
 
                 <!-- filer content for what will most likley be cards that hold each game and the info on them -->
                 <div id="game-area">
@@ -145,11 +175,12 @@
                 </div>
 
             </div>
-
         </div>
     </div>
+    </div>
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

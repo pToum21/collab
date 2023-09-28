@@ -1,24 +1,13 @@
 /* * {
     outline: red solid 2px
 } */
-
-.brand-logo {
-    width: 75px;
-    height: 60px;
+.navbar-item{
+    padding-left: 5%;
 }
-
-#logo-text {
-    padding-left: 7%;
-    margin: 0;
-    font-size: 25px;
+.navbar-item img {
+    max-height: 65px;
+    width: 100px;
 }
-
-#nav-bar-items {
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
 
 h1 {
     display: flex;
@@ -28,7 +17,7 @@ h1 {
 
 #side-bar {
     border: 2px solid red;
-    margin-top: 36px;
+    margin-top: 15px;
 }
 
 #side-bar-btns {
@@ -41,6 +30,9 @@ h1 {
     margin-bottom: 10px;
 }
 
+#main-area {
+    margin-top: 3px;
+}
 h2 {
     border: 2px solid red;
 }
@@ -52,29 +44,9 @@ h2 {
 
 }
 
-.nav-wrapper {
-    padding-left: 25%;
-    display: flex;
-    align-items: end;
-
+.row {
+    margin: 0;
 }
-
-
-
-
-.nav-content {
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-
-}
-
-.tabs {
-    flex: 1;
-}
-
-
-
 
 .input-field {
     margin-left: 10px;
