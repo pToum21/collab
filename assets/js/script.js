@@ -8,6 +8,8 @@ var teamOne = document.querySelector('#team-1');
 var teamTwo = document.querySelector('#team-2');
 var teamOneOdds = document.querySelector('#odds-for-team-1');
 var teamTwoOdds = document.querySelector('#odds-for-team-2');
+var GameId
+
 function oddsGetter(teamName) {
   // First API for odds
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
@@ -16,39 +18,33 @@ function oddsGetter(teamName) {
     "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=2e7e1a581a683ba3a7d10cb86a9f4105&regions=us&markets=spreads",
     options
   )
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
       for (let i = 0; i < data.length; i++) {
-        if(teamName === data[i].home_team || teamName === data[i].away_team){
-
-
-          console.log(data[i].bookmakers[1].markets[0].outcomes[0].name)
-        console.log(data[i].bookmakers[1].markets[0].outcomes[1].name)
-        console.log(data[i].bookmakers[1].markets[0].outcomes[0].price)
-        console.log(data[i].bookmakers[1].markets[0].outcomes[1].price)
-
+        if (teamName === data[i].home_team || teamName === data[i].away_team) {
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
-          teamOneOdds.textContent = data[i].bookmakers[1].markets[0].outcomes[0].price;
-          teamTwoOdds.textContent = data[i].bookmakers[1].markets[0].outcomes[1].price;
-
-        }else {
-          console.log('no odds')
+          teamOneOdds.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
+          teamTwoOdds.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
+          var GameId = data[i].id
         }
-      }
-      
 
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+      }
+
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 }
-  //   Second API for games
-  function teamchooser(){
-    var americanFootballURL =
+
+
+//   Second API for Team Names that takes that and applies it to the odds api to get the spread
+function teamchooser() {
+  var americanFootballURL =
     "https://americanfootballapi.p.rapidapi.com/api/american-football/search/" + team;
   var americanFootballKey = {
     method: "GET",
@@ -65,25 +61,41 @@ function oddsGetter(teamName) {
     .then(function (data) {
       americanFootballTeamName = data.results[0].entity.name
       oddsGetter(americanFootballTeamName);
+
     })
     .catch(function (error) {
       console.log(error);
-    });}
-  
+    });
+}
 
 
+
+
+
+
+// this should get the games scores using the game id given from the odds api call at the top
+function scoreGetter() {
+  var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
+
+  fetch(
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=2e7e1a581a683ba3a7d10cb86a9f4105",
+    options
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
 
 seacrhBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
+
 })
 
-
-
-
-
-
-// if(americanFootballTeamName === data[0].home_team || data[0].away_team){
- 
-// }

@@ -1,9 +1,9 @@
-/* * {
-    outline: red solid 2px
-} */
-.navbar-item{
+
+
+.navbar-item {
     padding-left: 5%;
 }
+
 .navbar-item img {
     max-height: 65px;
     width: 100px;
@@ -33,6 +33,7 @@ h1 {
 #main-area {
     margin-top: 3px;
 }
+
 h2 {
     border: 2px solid red;
 }
@@ -56,4 +57,3 @@ h2 {
 #game-area {
     border: 2px solid red;
 }
-
