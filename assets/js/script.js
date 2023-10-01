@@ -6,9 +6,11 @@ var americanFootballTeamName;
 var oddsTeam;
 var teamOne = document.querySelector('#team-1');
 var teamTwo = document.querySelector('#team-2');
-var teamOneOdds = document.querySelector('#odds-for-team-1');
-var teamTwoOdds = document.querySelector('#odds-for-team-2');
-var GameId
+var teamOneOddsEl = document.querySelector('#odds-for-team-1');
+var teamTwoOddsEl = document.querySelector('#odds-for-team-2');
+var gameId;
+var teamOneScoreEl = document.querySelector('#team-1-score')
+var teamTwoScoreEl = document.querySelector('#team-2-score')
 
 function oddsGetter(teamName) {
   // First API for odds
@@ -27,9 +29,10 @@ function oddsGetter(teamName) {
         if (teamName === data[i].home_team || teamName === data[i].away_team) {
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
-          teamOneOdds.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
-          teamTwoOdds.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
-          var GameId = data[i].id
+          teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
+          teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
+          gameId = data[i].id
+          scoreGetter(gameId)
         }
 
       }
@@ -49,7 +52,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": '746925a469msh98c5942603eb21ap1763ecjsn8eaf237b1f64',
+      "X-RapidAPI-Key": 'a0dde1fd88msh2d8fc60c3306a98p1b89c0jsnbcdd1afa2b5e',
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -73,8 +76,8 @@ function teamchooser() {
 
 
 
-// this should get the games scores using the game id given from the odds api call at the top
-function scoreGetter() {
+// this should get live games scores using the game id given from the odds api call at the top
+function scoreGetter(gameId) {
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
   fetch(
@@ -85,11 +88,29 @@ function scoreGetter() {
       return response.json();
     })
     .then(function (data) {
-      
+      console.log(data)
+      for (i = 0; i < data.length; i++) {
+
+        if (gameId === data[i].id) {
+          if (data[i].completed) {
+            return
+          }
+          displayLiveScores(data[i].scores[0].score, data[i].scores[1].score)
+          console.log(data[i].scores[0].score)
+          console.log(data[i].scores[1].score)
+        }
+      }
+
     })
     .catch(function (error) {
       console.log(error);
     })
+}
+
+// this will print the live scores on the page
+function displayLiveScores(teamOneScore, teamTwoScore) {
+teamOneScoreEl.textContent = teamOneScore;
+teamTwoScoreEl.textContent = teamTwoScore;
 }
 
 seacrhBtn.addEventListener('click', function (event) {
