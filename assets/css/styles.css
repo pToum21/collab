@@ -1,9 +1,20 @@
+body {
+    background-color: #6e61ab;
+    height: 1000px;
+}
+
+nav {
+    background-color: #aab1e5 !important;
+}
+
 .navbar-item {
     padding-left: 5%;
+    color: black;
+    font-weight: 500;
 }
 
 .navbar-item img {
-    max-height: 65px;
+    max-height: 70px;
     width: 100px;
 }
 
@@ -11,11 +22,15 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 0 0 15px 0;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 #side-bar {
-    border: 2px solid red;
-    margin-top: 15px;
+    border: 2px solid gray;
+    margin-top: 84px;
+    height: 700px;
 }
 
 #side-bar-btns {
@@ -29,18 +44,30 @@ h1 {
 }
 
 #main-area {
-    margin-top: 3px;
+    margin-top: 20px;
+    height: 100px;
+    color: black;
+    font-weight: 500;
 }
 
 h2 {
-    border: 2px solid red;
+    border: 2px solid gray;
 }
 
 .main-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: none;
+}
 
-    width: 15%;
-    margin: 10px;
-
+.top-btns {
+    width: 200px;
+    font-weight: 500;
+    font-weight: bold;
+    background-color: #aab1e5 !important;
+    color: #111 !important;
+    border-radius: 7px;
 }
 
 .row {
@@ -51,7 +78,31 @@ h2 {
     margin-left: 10px;
 }
 
-
 #game-area {
-    border: 2px solid red;
+    border: 2px solid gray;
+    height: 700px;
 }
+
+#search-area div {
+    display: flex;
+    justify-content: center;
+}
+
+.columns {
+    font-size: 20px;
+}
+
+#game-area >.columns:first-child {
+    border-bottom: solid gray 2px;
+}
+
+#spread {
+    margin-right: -70px;
+    /*border-bottom: solid gray 2px;*/
+}
+
+#teams-line {
+    margin-left: 10px;
+    /*border-bottom: solid gray 2px;*/
+}
+

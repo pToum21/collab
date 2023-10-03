@@ -31,31 +31,31 @@
         <div id="navbarBasicExample" class="navbar-menu is-active">
 
             <a class="navbar-item">
-                Basketball
+                Game #1
             </a>
 
             <a class="navbar-item">
-                Hockey
+                Game #2
             </a>
             <a class="navbar-item">
-                FootBall
-            </a>
-
-            <a class="navbar-item">
-                Soccer
+                Game #3
             </a>
 
             <a class="navbar-item">
-                Golf
+                Game #4
             </a>
 
             <a class="navbar-item">
-                BaseBall
+                Game #5
+            </a>
+
+            <a class="navbar-item">
+                Game #6
 
             </a>
 
             <a class="navbar-item">
-                Tennis
+                Game #7
             </a>
 
             <!-- search bar -->
@@ -74,10 +74,10 @@
         <div class="columns">
             <div id="side-bar" class="column is-3">
                 <!-- left side bar -->
-                <h1>NFL TEAM SEARCH</h1>
+                <h1>NFL Team Search</h1>
                 <div id="side-bar-btns">
                     <!-- league buttons that are on the left side of the page -->
-                    <form id="search-area ">
+                    <form id="search-area">
                         <div class="field has-addons">
                             <div class="control">
                                 <input id="search-bar" class="input" type="text" placeholder="Search">
@@ -94,28 +94,21 @@
 
             <div id="main-area" class="column is-9">
                 <!-- main content middle -->
-                <h2 id="main-section-nav-bar">
+                <h2 id="main-section-nav-bar" class="main-btns">
                     <!-- btns that are in the top middle of the page -->
-                    <button class="button is-link main-btns">All</button>
-                    <button class="button is-link main-btns">Live</button>
-                    <button class="button is-link main-btns">Odds</button>
-                    <button class="button is-link main-btns">Scheduled</button>
+                    <button class="button is-link top-btns">All</button>
+                    <button class="button is-link top-btns">Live</button>
+                    <button class="button is-link top-btns">Odds</button>
+                    <button class="button is-link top-btns">Scheduled</button>
                 </h2>
-                <div>
-                    <!-- generate game content here using js-->
-
-                    <!-- filter content for what will most likely be cards that hold each game and the info on them -->
-
-                    <!-- Game content goes here -->
-
-                    <!-- filer content for what will most likley be cards that hold each game and the info on them -->
-                    <div id="game-area" class="m-3 is-size-5">
+                <div id="game-container">
+                    <div id="game-area" class="m-3 is-size-5 pl-5 pr-5">
                         <div class="columns">
-                            <div class="column team ml-4">Teams</div>
-
-                            <div class="column has-text-centered">Spread</div>
+                            <div id="teams-line" class="column team ml-4 mt-3">Teams:</div>
+                            
+                            <div id="spread" class="column has-text-centered ml-6 mt-3">Spread:</div>
                         </div>
-                        <div class="container-fluid has-border has-background-light">
+                        <div class="container-fluid has-border">
                             <div class="columns">
                                 <div id="team-1" class="column is-3 team ml-4 "></div>
                                 <div id="team-1-score" class="column"></div>
