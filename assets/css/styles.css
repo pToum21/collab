@@ -1,0 +1,57 @@
+.navbar-item {
+    padding-left: 5%;
+}
+
+.navbar-item img {
+    max-height: 65px;
+    width: 100px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 15px 0;
+}
+
+#side-bar {
+    border: 2px solid red;
+    margin-top: 15px;
+}
+
+#side-bar-btns {
+    width: 100%;
+}
+
+.side-btns {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#main-area {
+    margin-top: 3px;
+}
+
+h2 {
+    border: 2px solid red;
+}
+
+.main-btns {
+
+    width: 15%;
+    margin: 10px;
+
+}
+
+.row {
+    margin: 0;
+}
+
+.input-field {
+    margin-left: 10px;
+}
+
+
+#game-area {
+    border: 2px solid red;
+}

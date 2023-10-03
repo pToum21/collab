@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookies Bank</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <!-- container that wraps the whole page -->
+
+    <!-- nav bar/header -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="./assets/photos/Bookies Bank Img.svg - Personal - Microsoft​ Edge 9_26_2023 10_19_42 PM.png">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+
+        <div id="navbarBasicExample" class="navbar-menu is-active">
+
+            <a class="navbar-item">
+                Basketball
+            </a>
+
+            <a class="navbar-item">
+                Hockey
+            </a>
+            <a class="navbar-item">
+                FootBall
+            </a>
+
+            <a class="navbar-item">
+                Soccer
+            </a>
+
+            <a class="navbar-item">
+                Golf
+            </a>
+
+            <a class="navbar-item">
+                BaseBall
+
+            </a>
+
+            <a class="navbar-item">
+                Tennis
+            </a>
+
+            <!-- search bar -->
+            <div class="navbar-end ">
+                <div class="navbar-item ">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    </nav>
+    <div class="container">
+        <div class="columns">
+            <div id="side-bar" class="column is-3">
+                <!-- left side bar -->
+                <h1>NFL TEAM SEARCH</h1>
+                <div id="side-bar-btns">
+                    <!-- league buttons that are on the left side of the page -->
+                    <form id="search-area ">
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input id="search-bar" class="input" type="text" placeholder="Search">
+                            </div>
+                            <div class="control">
+                                <button id="search-btn" class="button is-primary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="main-area" class="column is-9">
+                <!-- main content middle -->
+                <h2 id="main-section-nav-bar">
+                    <!-- btns that are in the top middle of the page -->
+                    <button class="button is-link main-btns">All</button>
+                    <button class="button is-link main-btns">Live</button>
+                    <button class="button is-link main-btns">Odds</button>
+                    <button class="button is-link main-btns">Scheduled</button>
+                </h2>
+                <div>
+                    <!-- generate game content here using js-->
+
+                    <!-- filter content for what will most likely be cards that hold each game and the info on them -->
+
+                    <!-- Game content goes here -->
+
+                    <!-- filer content for what will most likley be cards that hold each game and the info on them -->
+                    <div id="game-area" class="m-3 is-size-5">
+                        <div class="columns">
+                            <div class="column team ml-4">Teams</div>
+
+                            <div class="column has-text-centered">Spread</div>
+                        </div>
+                        <div class="container-fluid has-border has-background-light">
+                            <div class="columns">
+                                <div id="team-1" class="column is-3 team ml-4 "></div>
+                                <div id="team-1-score" class="column"></div>
+                                <div id="odds-for-team-1" class="column has-text-centered"></div>
+                            </div>
+                            <div class="columns">
+                                <div id="team-2" class="column is-3 team ml-4"></div>
+                                <div id="team-2-score" class="column"></div>
+                                <div id="odds-for-team-2" class="column has-text-centered"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
