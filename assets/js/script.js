@@ -1,3 +1,4 @@
+var loader = document.getElementById('preloader')
 var seacrhBtn = document.querySelector('#search-btn');
 var searchBar = document.querySelector('#search-bar');
 var team;
@@ -11,6 +12,8 @@ var teamTwoOddsEl = document.querySelector('#odds-for-team-2');
 var gameId;
 var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
+
+
 
 function oddsGetter(teamName) {
   // First API for odds
@@ -126,4 +129,8 @@ seacrhBtn.addEventListener('click', function (event) {
   teamchooser();
 
 })
+
+window.addEventListener('load', function() {
+  loader.style.display = 'none';
+  })
 
