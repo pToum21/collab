@@ -109,8 +109,8 @@ function scoreGetter(gameId) {
 
 // this will print the live scores on the page
 function displayLiveScores(teamOneScore, teamTwoScore) {
-teamOneScoreEl.textContent = teamOneScore;
-teamTwoScoreEl.textContent = teamTwoScore;
+  teamOneScoreEl.textContent = teamOneScore;
+  teamTwoScoreEl.textContent = teamTwoScore;
 }
 
 seacrhBtn.addEventListener('click', function (event) {
