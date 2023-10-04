@@ -17,7 +17,7 @@ var teamTwoScoreEl = document.querySelector('#team-2-score');
 
 function oddsGetter(teamName) {
   // First API for odds
-  var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
+  var options = { method: "GET" };
 
   fetch(
     "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=8d36a44d1a3552c2209cde20773d248c&regions=us&markets=spreads",
@@ -29,16 +29,23 @@ function oddsGetter(teamName) {
     .then(function (data) {
       console.log(data)
       for (let i = 0; i < data.length; i++) {
-        if (teamName === data[i].home_team || teamName === data[i].away_team) {
+ 
+          if (teamName === data[i].home_team || teamName === data[i].away_team) {
 
-          teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
-console.log(teamOne)
-          teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
-          teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
-          teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
-          gameId = data[i].id;
-          scoreGetter(gameId);
-        }
+            console.log('About to paint team names...');
+            console.table({ teamName, homeTeam: data[i].home_team, awayTeam: data[i].away_team });
+  
+            teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
+            console.log(teamOne)
+            teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
+            teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
+            teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
+            gameId = data[i].id;
+            scoreGetter(gameId);
+            break;
+          }
+
+        
 
       }
 
@@ -57,7 +64,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": '746925a469msh98c5942603eb21ap1763ecjsn8eaf237b1f64', // 'c28b242162msh72fe679ab59a566p12e963jsn2758a52b2a1d'(Adrian's key)
+      "X-RapidAPI-Key": 'c28b242162msh72fe679ab59a566p12e963jsn2758a52b2a1d', // 'c28b242162msh72fe679ab59a566p12e963jsn2758a52b2a1d'(Adrian's key)
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -69,6 +76,7 @@ function teamchooser() {
     .then(function (data) {
       console.log(data);
       americanFootballTeamName = data.results[0].entity.name;
+      console.log(americanFootballTeamName);
       oddsGetter(americanFootballTeamName);
 
     })
@@ -84,35 +92,36 @@ function teamchooser() {
 
 // this should get live games scores using the game id given from the odds api call at the top
 // this function is causing the wrong games to return 
-// function scoreGetter(gameId) {
-//   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
+function scoreGetter(gameId) {
+  var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
-//   fetch(
-//     "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=8d36a44d1a3552c2209cde20773d248c",
-//     options
-//   )
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data)
-//       for (i = 0; i < data.length; i++) {
+  fetch(
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=8d36a44d1a3552c2209cde20773d248c",
+    options
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+      for (i = 0; i < data.length; i++) {
+        console.table({gameId, Id: data[i].id, completed: data[i].completed})
+        if (gameId === data[i].id) {
+          if (data[i].completed) {
+            return
+          }
+          console.log(data[i])
+          displayLiveScores(data[i].scores[0].score, data[i].scores[1].score);
+          console.log(data[i].scores[0].score);
+          console.log(data[i].scores[1].score);
+        }
+      }
 
-//         if (gameId === data[i].id) {
-//           if (data[i].completed) {
-//             return
-//           }
-//           displayLiveScores(data[i].scores[0].score, data[i].scores[1].score);
-//           console.log(data[i].scores[0].score);
-//           console.log(data[i].scores[1].score);
-//         }
-//       }
-
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     })
-// }
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
 
 // this will print the live scores on the page
 function displayLiveScores(teamOneScore, teamTwoScore) {
@@ -128,10 +137,9 @@ seacrhBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
-
 })
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   loader.style.display = 'none';
-  })
+})
 
