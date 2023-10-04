@@ -32,7 +32,7 @@ function oddsGetter(teamName) {
         if (teamName === data[i].home_team || teamName === data[i].away_team) {
 
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
-
+console.log(teamOne)
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
           teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
           teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
@@ -83,35 +83,36 @@ function teamchooser() {
 
 
 // this should get live games scores using the game id given from the odds api call at the top
-function scoreGetter(gameId) {
-  var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
+// this function is causing the wrong games to return 
+// function scoreGetter(gameId) {
+//   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
-  fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=8d36a44d1a3552c2209cde20773d248c",
-    options
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data)
-      for (i = 0; i < data.length; i++) {
+//   fetch(
+//     "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=8d36a44d1a3552c2209cde20773d248c",
+//     options
+//   )
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data)
+//       for (i = 0; i < data.length; i++) {
 
-        if (gameId === data[i].id) {
-          if (data[i].completed) {
-            return
-          }
-          displayLiveScores(data[i].scores[1].score, data[i].scores[0].score);
-          console.log(data[i].scores[0].score);
-          console.log(data[i].scores[1].score);
-        }
-      }
+//         if (gameId === data[i].id) {
+//           if (data[i].completed) {
+//             return
+//           }
+//           displayLiveScores(data[i].scores[0].score, data[i].scores[1].score);
+//           console.log(data[i].scores[0].score);
+//           console.log(data[i].scores[1].score);
+//         }
+//       }
 
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-}
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     })
+// }
 
 // this will print the live scores on the page
 function displayLiveScores(teamOneScore, teamTwoScore) {
