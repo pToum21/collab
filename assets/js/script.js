@@ -15,6 +15,7 @@ var teamTwoScoreEl = document.querySelector('#team-2-score');
 
 
 
+
 function oddsGetter(teamName) {
   // First API for odds
   var options = { method: "GET" };
@@ -29,33 +30,23 @@ function oddsGetter(teamName) {
     .then(function (data) {
       console.log(data)
       for (let i = 0; i < data.length; i++) {
- 
-          if (teamName === data[i].home_team || teamName === data[i].away_team) {
 
-            console.log('About to paint team names...');
-            console.table({ teamName, homeTeam: data[i].home_team, awayTeam: data[i].away_team });
-  
-            teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
-            console.log(teamOne)
-            teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
-            teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
-            teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
-            gameId = data[i].id;
-            scoreGetter(gameId);
-            break;
-          }
-
-        
-
+        if (teamName === data[i].home_team || teamName === data[i].away_team) {
+          teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
+          console.log(teamOne)
+          teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
+          teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
+          teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
+          gameId = data[i].id;
+          scoreGetter(gameId);
+          break;
+        }
       }
-
-
     })
     .catch(function (error) {
       console.log(error);
     })
 }
-
 
 //   Second API for Team Names that takes that and applies it to the odds api to get the spread
 function teamchooser() {
@@ -64,7 +55,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": 'c28b242162msh72fe679ab59a566p12e963jsn2758a52b2a1d', // 'c28b242162msh72fe679ab59a566p12e963jsn2758a52b2a1d'(Adrian's key)
+      "X-RapidAPI-Key": 'f1a959becamsh9744d6f06f72784p14c8cajsn1767b0e8978d',
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -78,7 +69,6 @@ function teamchooser() {
       americanFootballTeamName = data.results[0].entity.name;
       console.log(americanFootballTeamName);
       oddsGetter(americanFootballTeamName);
-
     })
     .catch(function (error) {
       console.log(error);
@@ -105,12 +95,10 @@ function scoreGetter(gameId) {
     .then(function (data) {
       console.log(data)
       for (i = 0; i < data.length; i++) {
-        console.table({gameId, Id: data[i].id, completed: data[i].completed})
         if (gameId === data[i].id) {
           if (data[i].completed) {
             return
           }
-          console.log(data[i])
           displayLiveScores(data[i].scores[0].score, data[i].scores[1].score);
           console.log(data[i].scores[0].score);
           console.log(data[i].scores[1].score);
@@ -133,13 +121,69 @@ function displayLiveScores(teamOneScore, teamTwoScore) {
   console.log(teamOneScore);
 }
 
+// function to update the content of the Glide Slider
+function updateGameInSlider(gameDataArray) {
+  var glideTrack = document.querySelector(".glide__track");
+  var glideSlides = document.querySelector('.glide__slides');
+
+  // clear existing slides
+  glideSlides.innerHTML = '';
+
+  // loop through the game data and create a
+  gameDataArray.forEach((gameData) => {
+    var gameSlide = document.createElement('li');
+    gameSlide.classList.add('glide__slide');
+    gameSlide.innerHTML = `
+    <div class="game">
+      <h3>${gameData.title}</h3>
+      <p>${gameData.teams}</p>
+      <p>Score: ${gameData.score}</p>
+      </div>
+    `;
+    glideSlides.appendChild(gameSlide);
+    // update the the Glide.js slider after adding new slides
+    var glide = new Glide('.glide').mount();
+  });
+}
+// calling the function with the game data to update the slider
+new Glide('.glide', {
+  perView: 3 ,
+  autoplay: true,
+  animationDuration: 9000
+}).mount();
+
+
+function teamEvents() {
+  const teamEventsURL = 'https://americanfootballapi.p.rapidapi.com/api/american-football/tournament/19510/season/46788/team-events/total';
+  const teamEventsKey = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'f1a959becamsh9744d6f06f72784p14c8cajsn1767b0e8978d',
+      'X-RapidAPI-Host': 'americanfootballapi.p.rapidapi.com'
+    }
+  };
+  
+  fetch(teamEventsURL, teamEventsKey)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+
+
+
+    console.log(data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+}
+
+
+
 seacrhBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
+  teamEvents();
 })
-
-window.addEventListener('load', function () {
-  loader.style.display = 'none';
-})
-
