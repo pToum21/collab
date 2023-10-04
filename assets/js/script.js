@@ -14,7 +14,15 @@ var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
 
 
-
+window.onload = function(){
+  const gifdiv = document.querySelector('.preloader')
+  gifdiv.style.display = 'flex'
+setTimeout(() => {
+  gifdiv.style.display = 'none'
+  const content = document.getElementById('main-content')
+  content.classList.remove('hidden')
+}, 4000)
+}
 
 function oddsGetter(teamName) {
   // First API for odds
@@ -32,6 +40,7 @@ function oddsGetter(teamName) {
       for (let i = 0; i < data.length; i++) {
 
         if (teamName === data[i].home_team || teamName === data[i].away_team) {
+          
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
           console.log(teamOne)
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
@@ -55,7 +64,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": 'f1a959becamsh9744d6f06f72784p14c8cajsn1767b0e8978d',
+      "X-RapidAPI-Key": '68ed2c8346mshd71cefcf93bac76p14b5b6jsn77deb15e3a37',
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -153,37 +162,11 @@ new Glide('.glide', {
 }).mount();
 
 
-function teamEvents() {
-  const teamEventsURL = 'https://americanfootballapi.p.rapidapi.com/api/american-football/tournament/19510/season/46788/team-events/total';
-  const teamEventsKey = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'f1a959becamsh9744d6f06f72784p14c8cajsn1767b0e8978d',
-      'X-RapidAPI-Host': 'americanfootballapi.p.rapidapi.com'
-    }
-  };
-  
-  fetch(teamEventsURL, teamEventsKey)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-
-
-
-    console.log(data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-}
-
 
 
 seacrhBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
-  teamEvents();
+  
 })

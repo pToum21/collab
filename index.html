@@ -13,6 +13,9 @@
 
 <body>
 
+    <div class="preloader">
+        <img id="gif" src="./assets/css/loader.gif">
+    </div>
 
 
     <!-- container that wraps the whole page -->
@@ -36,7 +39,7 @@
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     <a class="navbar-item glide__slide">
-                       Game #1
+                        Game #1
                     </a>
 
                     <a class="navbar-item glide__slide">
@@ -65,69 +68,59 @@
                 </ul>
             </div>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu is-active">
-
-
-            <!-- search bar -->
-            <div class="navbar-end ">
-                <div class="navbar-item ">
-
-                </div>
-            </div>
-        </div>
+        
     </nav>
 
-
-
-    </nav>
-    <div class="container">
-        <div class="columns">
-            <div id="side-bar" class="column is-3">
-                <!-- left side bar -->
-                <h1>NFL Team Search</h1>
-                <div id="side-bar-btns">
-                    <!-- league buttons that are on the left side of the page -->
-                    <form id="search-area">
-                        <div class="field has-addons">
-                            <div class="control">
-                                <input id="search-bar" class="input" type="text" placeholder="Search">
+    <div id="main-content" class="hidden">
+        <div class="container">
+            <div class="columns">
+                <div id="side-bar" class="column is-3">
+                    <!-- left side bar -->
+                    <h1>NFL Team Search</h1>
+                    <div id="side-bar-btns">
+                        <!-- league buttons that are on the left side of the page -->
+                        <form id="search-area">
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <input id="search-bar" class="input" type="text" placeholder="Search">
+                                </div>
+                                <div class="control">
+                                    <button id="search-btn" class="button is-primary" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="control">
-                                <button id="search-btn" class="button is-primary" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-            <div id="main-area" class="column is-9">
-                <!-- main content middle -->
-                <h2 id="main-section-nav-bar" class="main-btns">
-                    <!-- btns that are in the top middle of the page -->
-                    <button class="button is-link top-btns">All</button>
-                    <button class="button is-link top-btns">Live</button>
-                    <button class="button is-link top-btns">Odds</button>
-                    <button class="button is-link top-btns">Scheduled</button>
-                </h2>
-                <div id="game-container">
-                    <div id="game-area" class="m-3 is-size-5 pl-5 pr-5">
-                        <div class="columns">
-                            <div id="teams-line" class="column team ml-4 mt-3">Teams:</div>
-
-                            <div id="spread" class="column has-text-centered ml-6 mt-3">Spread:</div>
-                        </div>
-                        <div class="container-fluid has-border">
+                <div id="main-area" class="column is-9">
+                    <!-- main content middle -->
+                    <h2 id="main-section-nav-bar" class="main-btns">
+                        <!-- btns that are in the top middle of the page -->
+                        <button class="button is-link top-btns">All</button>
+                        <button class="button is-link top-btns">Live</button>
+                        <button class="button is-link top-btns">Odds</button>
+                        <button class="button is-link top-btns">Scheduled</button>
+                    </h2>
+                    <div id="game-container">
+                        <div id="game-area" class="m-3 is-size-5 pl-5 pr-5">
                             <div class="columns">
-                                <div id="team-1" class="column is-3 team ml-4 "></div>
-                                <div id="team-1-score" class="column"></div>
-                                <div id="odds-for-team-1" class="column has-text-centered"></div>
+                                <div id="teams-line" class="column team ml-4 mt-3">Teams:</div>
+
+                                <div id="spread" class="column has-text-centered ml-6 mt-3">Spread:</div>
                             </div>
-                            <div class="columns">
-                                <div id="team-2" class="column is-3 team ml-4"></div>
-                                <div id="team-2-score" class="column"></div>
-                                <div id="odds-for-team-2" class="column has-text-centered"></div>
+                            <div id="odds-background"class="container-fluid has-border">
+                                <div class="columns">
+                                    <div id="team-1" class="column is-3 team ml-4 "></div>
+                                    <div id="team-1-score" class="column"></div>
+                                    <div id="odds-for-team-1" class="column has-text-centered"></div>
+                                </div>
+                                <div class="columns">
+                                    <div id="team-2" class="column is-3 team ml-4"></div>
+                                    <div id="team-2-score" class="column"></div>
+                                    <div id="odds-for-team-2" class="column has-text-centered"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,12 +128,13 @@
             </div>
         </div>
     </div>
-    </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/scrapId.js"></script>
+    <!-- <script src="./assets/js/scrapId.js"></script> -->
 </body>
 
 </html>
