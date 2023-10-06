@@ -1,5 +1,5 @@
 var loader = document.getElementById('preloader')
-var seacrhBtn = document.querySelector('#search-btn');
+var searchBtn = document.querySelector('#search-btn');
 var searchBar = document.querySelector('#search-bar');
 var team;
 var gameArea = document.querySelector('#game-area');
@@ -12,12 +12,52 @@ var teamTwoOddsEl = document.querySelector('#odds-for-team-2');
 var gameId;
 var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
+var gameContainer = document.querySelector('#game-container');
 
- var teamColors = JSON.parse(localStorage.getItem('teamColors')) || null;
 
- if (teamColors) {
+var allButton = document.querySelector('#all-button');
+// var liveButton = document.querySelector('#live-button');
+
+allButton.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  // clear the game container
+  gameContainer.innerHTML = '';
+
+  fetch(
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=1628afc88623be2e7317f0de68e7fcba&regions=us&markets=spreads"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+
+      for (let i = 0; i < data.length; i++) {
+        var gameDiv = document.createElement('div');
+        gameDiv.classList.add('game');
+        gameDiv.textContent = `${data[i].bookmakers[1].markets[0].outcomes[0].name} vs ${data[i].bookmakers[1].markets[0].outcomes[1].name}, Odds: ${data[i].bookmakers[1].markets[0].outcomes[0].point} - ${data[i].bookmakers[1].markets[0].outcomes[1].point}`;
+        gameContainer.appendChild(gameDiv);
+        // teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
+        // console.log(teamOne)
+        // teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
+        // teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
+        // teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
+        // gameId = data[i].id;
+        scoreGetter(gameId);
+
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+})
+
+var teamColors = JSON.parse(localStorage.getItem('teamColors')) || null;
+
+if (teamColors) {
   updateStyles(teamColors);
- }
+}
 
 window.onload = function () {
   const gifdiv = document.querySelector('.preloader')
@@ -34,7 +74,7 @@ function oddsGetter(teamName) {
   var options = { method: "GET" };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=5441ebc85af9ff350c2a234d7759e4ab&regions=us&markets=spreads",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=1628afc88623be2e7317f0de68e7fcba&regions=us&markets=spreads",
     options
   )
     .then(function (response) {
@@ -140,7 +180,7 @@ function scoreGetter(gameId) {
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=5441ebc85af9ff350c2a234d7759e4ab",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=1628afc88623be2e7317f0de68e7fcba",
     options
   )
     .then(function (response) {
@@ -209,14 +249,9 @@ new Glide('.glide', {
 
 
 
-seacrhBtn.addEventListener('click', function (event) {
+searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
 
 })
-
-/* 
-// Save teamIdObject in localStorage
-  localStorage.setItem('teamIdObject', JSON.stringify(teamIdObject));
-*/
