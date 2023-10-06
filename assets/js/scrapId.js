@@ -34,6 +34,41 @@ const teams = [
     "Washington Commanders",
 ]
 
+var teamIdObject = {
+    "Arizona Cardinals": 4412,
+    "Atlanta Falcons": 4393,
+    "Baltimore Ravens": 4413,
+    "Buffalo Bills": 4414,
+    "Carolina Panthers": 4415,
+    "Chicago Bears": 4391,
+    "Cincinnati Bengals": 4416,
+    "Cleveland Browns": 4417,
+    "Dallas Cowboys": 4392,
+    "Denver Broncos": 4418,
+    "Detroit Lions": 4419,
+    "Green Bay Packers": 4420,
+    "Houston Texans": 4324,
+    "Indianapolis Colts": 4421,
+    "Jacksonville Jaguars": 4386,
+    "Kansas City Chiefs": 4422,
+    "Las Vegas Raiders": 4390,
+    "Los Angeles Chargers": 4429,
+    "Los Angeles Rams": 4387,
+    "Miami Dolphins": 4287,
+    "Minnesota Vikings": 4423,
+    "New England Patriots": 4424,
+    "New Orleans Saints": 4425,
+    "New York Giants": 4426,
+    "New York Jets": 4427,
+    "Philadelphia Eagles": 4428,
+    "Pittsburgh Steelers": 4345,
+    "San Francisco 49ers": 4389,
+    "Seattle Seahawks": 4430,
+    "Tampa Bay Buccaneers": 4388,
+    "Tennessee Titans": 4431,
+    "Washington Commanders": 4432
+  }
+
 var americanFootballKey = {
     method: "GET",
     headers: {
@@ -43,8 +78,8 @@ var americanFootballKey = {
 };
 
 
-for (let i = 0; i < teams.length; i++) {
-    urls.push((`https://americanfootballapi.p.rapidapi.com/api/american-football/search/${teams[i]}`))
+for (var team in teamIdObject) {
+    urls.push((`https://americanfootballapi.p.rapidapi.com/api/american-football/team/${teamIdObject[team]}/image`))
 }
 
 
