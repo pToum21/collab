@@ -14,14 +14,14 @@ var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
 
 
-window.onload = function(){
+window.onload = function () {
   const gifdiv = document.querySelector('.preloader')
   gifdiv.style.display = 'flex'
-setTimeout(() => {
-  gifdiv.style.display = 'none'
-  const content = document.getElementById('main-content')
-  content.classList.remove('hidden')
-}, 4000)
+  setTimeout(() => {
+    gifdiv.style.display = 'none'
+    const content = document.getElementById('main-content')
+    content.classList.remove('hidden')
+  }, 4000)
 }
 
 function oddsGetter(teamName) {
@@ -40,7 +40,7 @@ function oddsGetter(teamName) {
       for (let i = 0; i < data.length; i++) {
 
         if (teamName === data[i].home_team || teamName === data[i].away_team) {
-          
+
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
           console.log(teamOne)
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
@@ -156,7 +156,7 @@ function updateGameInSlider(gameDataArray) {
 }
 // calling the function with the game data to update the slider
 new Glide('.glide', {
-  perView: 3 ,
+  perView: 3,
   autoplay: true,
   animationDuration: 9000
 }).mount();
@@ -168,5 +168,5 @@ seacrhBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
-  
+
 })
