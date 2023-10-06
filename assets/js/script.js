@@ -13,15 +13,20 @@ var gameId;
 var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
 
+ var teamColors = JSON.parse(localStorage.getItem('teamColors')) || null;
 
-window.onload = function(){
+ if (teamColors) {
+  updateStyles(teamColors);
+ }
+
+window.onload = function () {
   const gifdiv = document.querySelector('.preloader')
   gifdiv.style.display = 'flex'
-setTimeout(() => {
-  gifdiv.style.display = 'none'
-  const content = document.getElementById('main-content')
-  content.classList.remove('hidden')
-}, 4000)
+  setTimeout(() => {
+    gifdiv.style.display = 'none'
+    const content = document.getElementById('main-content')
+    content.classList.remove('hidden')
+  }, 4000)
 }
 
 function oddsGetter(teamName) {
@@ -40,7 +45,7 @@ function oddsGetter(teamName) {
       for (let i = 0; i < data.length; i++) {
 
         if (teamName === data[i].home_team || teamName === data[i].away_team) {
-          
+
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
           console.log(teamOne)
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
@@ -64,7 +69,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735', 
+      "X-RapidAPI-Key": '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735',
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -81,16 +86,12 @@ function teamchooser() {
 
       var teamColors = data.results[0].entity.teamColors;
       console.log(teamColors)
-      localStorage.setItem('teamColors',JSON.stringify(teamColors))
-      document.querySelector('body').style = `background-color: ${teamColors.primary}; color: ${teamColors.text}`
-      document.querySelector('nav').style = `background-color: ${teamColors.secondary}`
-      document.querySelector('.navbar-item').style = `color: ${teamColors.text}`
-      document.querySelector('#side-bar').style = `border: ${teamColors.secondary} 2px solid`
-      
-      document.querySelector('.top-btns').style = `color: ${teamColors.text}; background-color: ${teamColors.secondary}`
-      document.querySelector('#game-area').style = `border: ${teamColors.secondary} 2px solid`
-      
-      
+      localStorage.setItem('teamColors', JSON.stringify(teamColors))
+
+
+
+      updateStyles(teamColors);
+
 
       americanFootballTeamName = data.results[0].entity.name;
       console.log(americanFootballTeamName);
@@ -101,11 +102,37 @@ function teamchooser() {
       console.log(error);
     });
 }
+function updateStyles(teamColors) {
+  document.querySelector('body').style = `background-color: ${teamColors.primary}; color: ${teamColors.text}`
+  document.querySelector('nav').style = `background-color: ${teamColors.secondary}`
+  document.querySelector('.navbar-item').style = `color: ${teamColors.text}`
+  document.querySelector('#side-bar').style = `border: ${teamColors.secondary} 2px solid`
 
+  document.querySelector('.top-btns').style = `color: ${teamColors.text}; background-color: ${teamColors.secondary}`
+  document.querySelector('#game-area').style = `border: ${teamColors.secondary} 2px solid`
+}
+function logoGetter() {
+  var americanFootballLogoURL = 'https://americanfootballapi.p.rapidapi.com/api/american-football/team/4388/image';
+  var americanFootballLogoKey = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735',
+      'X-RapidAPI-Host': 'americanfootballapi.p.rapidapi.com'
+    }
+  };
 
+  fetch(americanFootballLogoURL, americanFootballLogoKey)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
 
-
-
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 
 // this should get live games scores using the game id given from the odds api call at the top
 // this function is causing the wrong games to return 
@@ -174,7 +201,7 @@ function updateGameInSlider(gameDataArray) {
 }
 // calling the function with the game data to update the slider
 new Glide('.glide', {
-  perView: 3 ,
+  perView: 3,
   autoplay: true,
   animationDuration: 9000
 }).mount();
@@ -186,5 +213,10 @@ seacrhBtn.addEventListener('click', function (event) {
   event.preventDefault();
   team = searchBar.value;
   teamchooser();
-  
+
 })
+
+/* 
+// Save teamIdObject in localStorage
+  localStorage.setItem('teamIdObject', JSON.stringify(teamIdObject));
+*/
