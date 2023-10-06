@@ -204,12 +204,32 @@ footer {
     }
 
     #main-area {
-        color: white;
+        color: black;
 
     }
 
     #team-1 {
-        margin-top: 75px
+        margin-top: 75px;
+        background-color: white
+    }
+    #team-2 {
+        margin-top: 75px;
+        background-color: white
     }
     
+    #odds-for-team-1 {
+        width: 40px;
+        background-color: white
+    }
+
+    #odds-for-team-2 {
+        width: 40px;
+        background-color: white
+    }
+    #teams-line {
+        width: 30%;
+    }
+    #spread {
+        width: 0%;
+    }
 }
