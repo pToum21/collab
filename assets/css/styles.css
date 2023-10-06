@@ -1,8 +1,10 @@
 
-
 body {
     background-color: #6e61ab;
     height: 1000px;
+    /* background-image: url('./odds\ background.jpg'); */
+    
+
 }
 
 nav {
@@ -18,6 +20,25 @@ nav {
 .navbar-item img {
     max-height: 70px;
     width: 100px;
+}
+
+.preloader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gif {
+width: 100%;
+}
+
+.hidden {
+    display: none;
 }
 
 h1 {
@@ -38,6 +59,30 @@ h1 {
 #side-bar-btns {
     width: 100%;
 }
+
+#search-btn {
+    background-color: #aab1e5;
+}
+
+#search-btn:hover {
+    border-radius: 0px;
+    
+		color: var(--feedback-primary-color);
+		background-color: var(--background-color);
+		background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+		animation: animatedBackground .5s linear infinite alternate;
+	}
+
+
+@keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+
 
 .side-btns {
     width: 100%;
@@ -70,6 +115,26 @@ h2 {
     background-color: #aab1e5 !important;
     color: #111 !important;
     border-radius: 7px;
+
+}
+
+.top-btns:hover {
+    border-radius: 0px;
+    
+		color: var(--feedback-primary-color);
+		background-color: var(--background-color);
+		background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+		animation: animatedBackground 5s linear infinite alternate;
+	}
+
+
+@keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
 }
 
 .row {
@@ -82,7 +147,7 @@ h2 {
 
 #game-area {
     border: 2px solid gray;
-    height: 700px;
+    height: 688px;
 }
 
 #search-area div {
@@ -108,13 +173,20 @@ h2 {
     /*border-bottom: solid gray 2px;*/
 }
 
+.glide__slides {
+    height: 100px;
+    /* max-width: 25%; */
+}
 
+#game-area {
+    background-image: url('./odds\ background.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 50% 40%;
+    filter: opacity(70%);
 
-#preloader {
-    background: #000 url(./loader.gif) no-repeat center center;
-    background-size: 100%;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
+}
+
+footer {
+    max-height: 20px;
 }
