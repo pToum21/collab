@@ -1,6 +1,6 @@
 
 body {
-    background-color: #6e61ab;
+    background-color:  #00637C;
     height: 1000px;
     /* background-image: url('./odds\ background.jpg'); */
     
@@ -8,7 +8,7 @@ body {
 }
 
 nav {
-    background-color: #aab1e5 !important;
+    background-color: #aab1e5;
 }
 
 .navbar-item {
@@ -53,7 +53,8 @@ h1 {
 #side-bar {
     border: 2px solid gray;
     margin-top: 84px;
-    height: 700px;
+    height: 725px;
+    
 }
 
 #side-bar-btns {
@@ -61,7 +62,7 @@ h1 {
 }
 
 #search-btn {
-    background-color: #aab1e5;
+    background-color: #718C9E;
 }
 
 #search-btn:hover {
@@ -97,10 +98,6 @@ h1 {
     font-weight: 500;
 }
 
-h2 {
-    border: 2px solid gray;
-}
-
 .main-btns {
     display: flex;
     flex-direction: row;
@@ -112,7 +109,7 @@ h2 {
     width: 200px;
     font-weight: 500;
     font-weight: bold;
-    background-color: #aab1e5 !important;
+    background-color: #718C9E !important;
     color: #111 !important;
     border-radius: 7px;
 
@@ -159,7 +156,7 @@ h2 {
     font-size: 20px;
 }
 
-#game-area >.columns:first-child {
+#game-area > .columns:first-child {
     border-bottom: solid gray 2px;
 }
 
@@ -189,4 +186,5 @@ h2 {
 
 footer {
     max-height: 20px;
+    margin-top: 60px;
 }
