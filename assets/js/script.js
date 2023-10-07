@@ -15,8 +15,9 @@ var teamTwoScoreEl = document.querySelector('#team-2-score');
 var gameContainer = document.querySelector('#game-container');
 
 
+
 var allButton = document.querySelector('#all-button');
-// var liveButton = document.querySelector('#live-button');
+
 
 allButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -31,19 +32,13 @@ allButton.addEventListener('click', function (event) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+
 
       for (let i = 0; i < data.length; i++) {
         var gameDiv = document.createElement('div');
         gameDiv.classList.add('game');
         gameDiv.textContent = `${data[i].bookmakers[1].markets[0].outcomes[0].name} vs ${data[i].bookmakers[1].markets[0].outcomes[1].name}, Odds: ${data[i].bookmakers[1].markets[0].outcomes[0].point} - ${data[i].bookmakers[1].markets[0].outcomes[1].point}`;
         gameContainer.appendChild(gameDiv);
-        // teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
-        // console.log(teamOne)
-        // teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
-        // teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
-        // teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
-        // gameId = data[i].id;
         scoreGetter(gameId);
 
       }
@@ -119,13 +114,8 @@ function teamchooser() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-
-
-      // console.log(data.results[0].entity.teamColors)
-
       var teamColors = data.results[0].entity.teamColors;
-      console.log(teamColors)
+
       localStorage.setItem('teamColors', JSON.stringify(teamColors))
 
 
@@ -134,7 +124,7 @@ function teamchooser() {
 
 
       americanFootballTeamName = data.results[0].entity.name;
-      console.log(americanFootballTeamName);
+
 
       oddsGetter(americanFootballTeamName);
     })
@@ -166,7 +156,7 @@ function logoGetter() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data)
 
     })
     .catch(function (error) {
@@ -187,7 +177,7 @@ function scoreGetter(gameId) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+
       for (i = 0; i < data.length; i++) {
         if (gameId === data[i].id) {
           if (data[i].completed) {
@@ -212,7 +202,7 @@ function displayLiveScores(teamOneScore, teamTwoScore) {
   teamTwoScoreEl.setAttribute('class', 'score-line');
   teamTwoScoreEl.textContent = teamTwoScore;
 
-  console.log(teamOneScore);
+
 }
 
 // function to update the content of the Glide Slider

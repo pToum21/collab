@@ -182,8 +182,8 @@ h1 {
 }
 
 footer {
-    max-height: 20px;
-    margin-top: 60px;
+    height: 5%;
+    margin-top: 5%;
 }
 
 @media (max-width: 768px) {
@@ -218,18 +218,18 @@ footer {
     }
     
     #odds-for-team-1 {
-        width: 40px;
+        width: 75px;
         background-color: white
     }
 
     #odds-for-team-2 {
-        width: 40px;
+        width: 75px;
         background-color: white
     }
     #teams-line {
         width: 30%;
     }
     #spread {
-        width: 0%;
+        width: 0px;
     }
 }
