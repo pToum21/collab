@@ -133,7 +133,7 @@ function teamchooser() {
     });
 }
 function updateStyles(teamColors) {
-  document.querySelector('body').style = `background-color: ${teamColors.primary}; color: ${teamColors.text}`
+  document.querySelector('html').style = `background-color: ${teamColors.primary}; color: ${teamColors.text}`
   document.querySelector('nav').style = `background-color: ${teamColors.secondary}`
   document.querySelector('.navbar-item').style = `color: ${teamColors.text}`
   document.querySelector('#side-bar').style = `border: ${teamColors.secondary} 2px solid`
