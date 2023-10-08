@@ -12,7 +12,7 @@ var teamTwoOddsEl = document.querySelector('#odds-for-team-2');
 var gameId;
 var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
-var gameContainer = document.querySelector('#game-container');
+var gameContainer = document.querySelector('#game-area');
 
 
 
@@ -26,7 +26,7 @@ allButton.addEventListener('click', function (event) {
   gameContainer.innerHTML = '';
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=1628afc88623be2e7317f0de68e7fcba&regions=us&markets=spreads"
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3615c03dc742b30f42c220931bb82a63&regions=us&markets=spreads"
   )
     .then(function (response) {
       return response.json();
@@ -69,7 +69,7 @@ function oddsGetter(teamName) {
   var options = { method: "GET" };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=1628afc88623be2e7317f0de68e7fcba&regions=us&markets=spreads",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3615c03dc742b30f42c220931bb82a63&regions=us&markets=spreads",
     options
   )
     .then(function (response) {
@@ -104,7 +104,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735',
+      "X-RapidAPI-Key": '746925a469msh98c5942603eb21ap1763ecjsn8eaf237b1f64',
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -146,7 +146,7 @@ function logoGetter() {
   var americanFootballLogoKey = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735',
+      'X-RapidAPI-Key': '746925a469msh98c5942603eb21ap1763ecjsn8eaf237b1f64',
       'X-RapidAPI-Host': 'americanfootballapi.p.rapidapi.com'
     }
   };
@@ -170,7 +170,7 @@ function scoreGetter(gameId) {
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=1628afc88623be2e7317f0de68e7fcba",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=3615c03dc742b30f42c220931bb82a63",
     options
   )
     .then(function (response) {

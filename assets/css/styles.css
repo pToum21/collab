@@ -186,6 +186,12 @@ footer {
     margin-top: 5%;
 }
 
+.game {
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     #side-bar {
         height: 100px; 
