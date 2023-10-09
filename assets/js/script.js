@@ -31,7 +31,7 @@ window.onload = function () {
     gifdiv.style.display = 'none'
     const content = document.getElementById('main-content')
     content.classList.remove('hidden')
-  }, 4000)
+  }, 1500)
 }
 
 function oddsGetter(teamName) {
@@ -278,7 +278,7 @@ schBtn.addEventListener('click', function(event){
 
   gameContainer.innerHTML = '';
 
-  
+
 })
 
 
