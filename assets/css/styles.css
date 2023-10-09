@@ -186,6 +186,8 @@ h1 {
 footer {
     height: 3%;
     margin-top: 60%;
+    display: flex;
+    justify-content: center;
 }
 
 .game {
