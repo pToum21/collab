@@ -209,7 +209,7 @@ function updateGameInSlider(gameDataArray) {
   });
 }
 new Glide('.glide', {
-  perView: 3,
+  perView: 5,
   autoplay: true,
   animationDuration: 9000
 }).mount();
