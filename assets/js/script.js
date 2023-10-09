@@ -14,10 +14,12 @@ var teamOneScoreEl = document.querySelector('#team-1-score');
 var teamTwoScoreEl = document.querySelector('#team-2-score');
 var gameContainer = document.querySelector('#game-area');
 var allButton = document.querySelector('#all-button');
-var teamColors = JSON.parse(localStorage.getItem('teamColors')) || null;
 var liveButton = document.querySelector('#live-button');
+var schBtn = document.querySelector('#scheduled-button')
 
 
+
+var teamColors = JSON.parse(localStorage.getItem('teamColors')) || null;
 if (teamColors) {
   updateStyles(teamColors);
 }
@@ -253,9 +255,9 @@ liveButton.addEventListener('click', function (event) {
     .then(function (data) {
       for (let i = 0; i < data.length; i++) {
         if (data[i].completed) {
-         return;
-          
-        }else { 
+          return;
+
+        } else {
           var gameDiv = document.createElement('div');
           gameDiv.classList.add('game');
           gameDiv.textContent = `${data[i].away_team} vs ${data[i].home_team} - Score: ${data[i].away_score} - ${data[i].home_score}`;
@@ -271,7 +273,13 @@ liveButton.addEventListener('click', function (event) {
 })
 
 
+schBtn.addEventListener('click', function(event){
+  event.preventDefault();
 
+  gameContainer.innerHTML = '';
+
+  
+})
 
 
 searchBtn.addEventListener('click', function (event) {

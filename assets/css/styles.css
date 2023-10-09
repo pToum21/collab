@@ -50,7 +50,7 @@ h1 {
 #side-bar {
     border: 2px solid gray;
     margin-top: 46px;
- 
+
 }
 
 #side-bar-btns {
@@ -162,17 +162,17 @@ h1 {
 
 #spread {
     margin-right: -70px;
-    
+
 }
 
 #teams-line {
     margin-left: 10px;
-   
+
 }
 
 .glide__slides {
     height: 100px;
-    
+
 }
 
 #game-area {
@@ -184,7 +184,7 @@ h1 {
 }
 
 footer {
-    height: 3%;
+    height: 1%;
     margin-top: 60%;
     display: flex;
     justify-content: center;
