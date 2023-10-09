@@ -140,7 +140,7 @@ function scoreGetter(gameId) {
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=5441ebc85af9ff350c2a234d7759e4ab",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=1d683fd1a490f31a94ac783aa7fcbce9",
     options
   )
     .then(function (response) {
