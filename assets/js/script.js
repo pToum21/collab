@@ -273,11 +273,33 @@ liveButton.addEventListener('click', function (event) {
 })
 
 
-schBtn.addEventListener('click', function(event){
+schBtn.addEventListener('click', function (event) {
   event.preventDefault();
 
   gameContainer.innerHTML = '';
 
+  fetch(
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3615c03dc742b30f42c220931bb82a63&regions=us&markets=spreads"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+
+
+      for (let i = 0; i < data.length; i++) {
+
+        var gameDiv = document.createElement('div');
+        gameDiv.classList.add('game');
+        gameDiv.textContent = `${data[i].bookmakers[1].markets[0].outcomes[0].name} vs ${data[i].bookmakers[1].markets[0].outcomes[1].name}, Odds: ${data[i].bookmakers[1].markets[0].outcomes[0].point} - ${data[i].bookmakers[1].markets[0].outcomes[1].point}`;
+        gameContainer.appendChild(gameDiv);
+        scoreGetter(gameId);
+
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 
 })
 
