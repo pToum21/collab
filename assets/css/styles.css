@@ -16,7 +16,7 @@ nav.navbar {
 
 .navbar-item img {
     max-height: 70px;
-    width: 100%;
+    max-width: 70%;
 }
 
 .preloader {

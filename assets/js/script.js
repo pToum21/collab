@@ -42,7 +42,7 @@ function oddsGetter(teamName) {
   var options = { method: "GET" };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3de6282cf12b721ef0d7d365dc63f4b2&regions=us&markets=spreads",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=474633fd4c19342b56f4a09cd7c34459&regions=us&markets=spreads",
     options
   )
     .then(function (response) {
@@ -148,7 +148,7 @@ function scoreGetter(gameId) {
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=3de6282cf12b721ef0d7d365dc63f4b2",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=474633fd4c19342b56f4a09cd7c34459",
     options
   )
     .then(function (response) {
@@ -222,7 +222,7 @@ allButton.addEventListener('click', function (event) {
   gameContainer.innerHTML = '';
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3de6282cf12b721ef0d7d365dc63f4b2&regions=us&markets=spreads"
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=474633fd4c19342b56f4a09cd7c34459&regions=us&markets=spreads"
   )
     .then(function (response) {
       return response.json();
@@ -253,7 +253,7 @@ liveButton.addEventListener('click', function (event) {
 
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=3de6282cf12b721ef0d7d365dc63f4b2",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=474633fd4c19342b56f4a09cd7c34459",
     options
   )
     .then(function (response) {
@@ -286,7 +286,7 @@ schBtn.addEventListener('click', function (event) {
   gameContainer.innerHTML = '';
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3de6282cf12b721ef0d7d365dc63f4b2&regions=us&markets=spreads"
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=474633fd4c19342b56f4a09cd7c34459&regions=us&markets=spreads"
   )
     .then(function (response) {
       return response.json();
