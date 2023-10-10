@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/glide.theme.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="./assets/css/phone.css">
 </head>
 
 <body>
@@ -18,7 +19,6 @@
     </div>
 
 
-    <!-- container that wraps the whole page -->
 
     <!-- nav bar/header -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -39,31 +39,31 @@
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     <a class="navbar-item glide__slide">
-                        Game #1
+                        <img src="./assets/photos/NFL logos/49ers.png">
                     </a>
 
                     <a class="navbar-item glide__slide">
-                        Game #2
+                        <img src="./assets/photos/NFL logos/Bears.png">
                     </a>
                     <a class="navbar-item glide__slide">
-                        Game #3
-                    </a>
-
-                    <a class="navbar-item glide__slide">
-                        Game #4
+                        <img src="./assets/photos/NFL logos/Bengals.png">
                     </a>
 
                     <a class="navbar-item glide__slide">
-                        Game #5
+                        <img src="./assets/photos/NFL logos/Bills.png">
                     </a>
 
                     <a class="navbar-item glide__slide">
-                        Game #6
+                        <img src="./assets/photos/NFL logos/Dolphins.png">
+                    </a>
+
+                    <a class="navbar-item glide__slide">
+                        <img src="./assets/photos/NFL logos/Ravens.png">
 
                     </a>
 
                     <a class="navbar-item glide__slide">
-                        Game #7
+                        <img src="./assets/photos/NFL logos/Jaguars.png">
                     </a>
                 </ul>
             </div>
@@ -74,7 +74,7 @@
     <div id="main-content" class="hidden">
         <div class="container">
             <div class="columns">
-                <div id="side-bar" class="column is-3">
+                <div id="side-bar" class="column is-12-mobile is-3-tablet">
                     <!-- left side bar -->
                     <h1>NFL Team Search</h1>
                     <div id="side-bar-btns">
@@ -94,14 +94,13 @@
                     </div>
                 </div>
 
-                <div id="main-area" class="column is-9">
+                <div id="main-area" class="column is-12-mobile is-9-tablet">
                     <!-- main content middle -->
                     <h2 id="main-section-nav-bar" class="main-btns">
                         <!-- btns that are in the top middle of the page -->
-                        <button class="button is-link top-btns">All</button>
-                        <button class="button is-link top-btns">Live</button>
-                        <button class="button is-link top-btns">Odds</button>
-                        <button class="button is-link top-btns">Scheduled</button>
+                        <button id="all-button" class="button is-link top-btns">All</button>
+                        <button id="live-button" class="button is-link top-btns">Live</button>
+                        <button id="scheduled-button" class="button is-link top-btns">Scheduled</button>
                     </h2>
                     <div id="game-container">
                         <div id="game-area" class="m-3 is-size-5 pl-5 pr-5">
@@ -110,16 +109,18 @@
 
                                 <div id="spread" class="column has-text-centered ml-6 mt-3">Spread:</div>
                             </div>
-                            <div id="odds-background" class="container-fluid has-border">
-                                <div class="columns">
-                                    <div id="team-1" class="column is-3 team ml-4 "></div>
-                                    <div id="team-1-score" class="column"></div>
-                                    <div id="odds-for-team-1" class="column has-text-centered"></div>
-                                </div>
-                                <div class="columns">
-                                    <div id="team-2" class="column is-3 team ml-4"></div>
-                                    <div id="team-2-score" class="column"></div>
-                                    <div id="odds-for-team-2" class="column has-text-centered"></div>
+                            <div id="game-juicer">
+                                <div id="odds-background" class="has-border">
+                                    <div class="columns">
+                                        <div id="team-1" class="column is-3 team ml-4 "></div>
+                                        <div id="team-1-score" class="column"></div>
+                                        <div id="odds-for-team-1" class="column has-text-centered"></div>
+                                    </div>
+                                    <div class="columns">
+                                        <div id="team-2" class="column is-3 team ml-4"></div>
+                                        <div id="team-2-score" class="column"></div>
+                                        <div id="odds-for-team-2" class="column has-text-centered"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -128,9 +129,10 @@
             </div>
         </div>
     </div>
-
+    </div>
+    <!--footer to credit devs -->
     <footer class="footer">
-        <div class="content has-text-centered">
+        <div class="content has-text-centered column is-12-mobile is-9-tablet">
             <p>
                 <strong>Bookies Bank</strong> by <i>Peyton Touma, Adrian Randoll, Jandrei Tim, Sabrina Giannette, and
                     William Tsai</i></a>. The APIs used are,
