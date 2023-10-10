@@ -7,16 +7,15 @@
 - used two third party Api's
 - Used team logos for navbar
 - styled the page using CSS and Bulma
-- Used Glide.js for the carousel 
+- used Glide.js for the carousel 
 - used qsudo classes on buttons for a hover effect
 - generate content dynamically using JavaScript
 - used set timeout to make a splash screen on a timer
 - used Font awesome in a script tag 
-- 
 
 ## Credits
 
--Payton Touma: pToum21, https://github.com/pToum21
+-Peyton Touma: pToum21, https://github.com/pToum21
 
 -Adrian Randoll: AMR663, https://github.com/AMR663
 
@@ -30,12 +29,14 @@
 
 ## Tests
 
-Searched evrey NFL game to make sure that evrything was working properly as well as working on live server together as a group to minimize errors
+Searched evrey NFL game to make sure that evreything was working properly as well as working on live server together as a group to minimize errors
 
 
 ## Preview
 
-![Screenshot of Bookies Bank application](<./assets/photos/Bookies Bank Img.svg - Personal - Microsoft​ Edge 9_26_2023 10_19_42 PM.png>)
+![Screenshot of Bookies Bank application](<./assets/photos/bookies-bank_720.png>)
 
 ## Deployed
+
+- https://ptoum21.github.io/sports-odds-app/
 
