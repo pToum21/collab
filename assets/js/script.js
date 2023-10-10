@@ -42,7 +42,7 @@ function oddsGetter(teamName) {
   var options = { method: "GET" };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3615c03dc742b30f42c220931bb82a63&regions=us&markets=spreads",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=dc80df53730ab63976ed156dd83f0b95&regions=us&markets=spreads",
     options
   )
     .then(function (response) {
@@ -148,7 +148,7 @@ function scoreGetter(gameId) {
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=3615c03dc742b30f42c220931bb82a63",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=dc80df53730ab63976ed156dd83f0b95",
     options
   )
     .then(function (response) {
@@ -190,7 +190,7 @@ function updateGameInSlider(gameDataArray) {
   var glideTrack = document.querySelector(".glide__track");
   var glideSlides = document.querySelector('.glide__slides');
 
-  
+
   glideSlides.innerHTML = '';
 
   gameDataArray.forEach((gameData) => {
@@ -204,7 +204,7 @@ function updateGameInSlider(gameDataArray) {
       </div>
     `;
     glideSlides.appendChild(gameSlide);
-    
+
     var glide = new Glide('.glide').mount();
   });
 }
@@ -222,7 +222,7 @@ allButton.addEventListener('click', function (event) {
   gameContainer.innerHTML = '';
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3615c03dc742b30f42c220931bb82a63&regions=us&markets=spreads"
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=dc80df53730ab63976ed156dd83f0b95&regions=us&markets=spreads"
   )
     .then(function (response) {
       return response.json();
@@ -253,7 +253,7 @@ liveButton.addEventListener('click', function (event) {
 
   var options = { method: "GET", headers: { "User-Agent": "insomnia/8.1.0" } };
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=3615c03dc742b30f42c220931bb82a63",
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=1&apiKey=dc80df53730ab63976ed156dd83f0b95",
     options
   )
     .then(function (response) {
@@ -286,7 +286,7 @@ schBtn.addEventListener('click', function (event) {
   gameContainer.innerHTML = '';
 
   fetch(
-    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=3615c03dc742b30f42c220931bb82a63&regions=us&markets=spreads"
+    "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=dc80df53730ab63976ed156dd83f0b95&regions=us&markets=spreads"
   )
     .then(function (response) {
       return response.json();
