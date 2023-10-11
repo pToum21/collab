@@ -78,7 +78,7 @@ function teamchooser() {
   var americanFootballKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735',
+      "X-RapidAPI-Key": '746925a469msh98c5942603eb21ap1763ecjsn8eaf237b1f64',
       "X-RapidAPI-Host": "americanfootballapi.p.rapidapi.com",
     },
   };
@@ -125,7 +125,7 @@ function logoGetter() {
   var americanFootballLogoKey = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '7aec5f8208msh3d0deca9d956c92p1b7cd4jsn11d0eeb56735',
+      'X-RapidAPI-Key': '746925a469msh98c5942603eb21ap1763ecjsn8eaf237b1f64',
       'X-RapidAPI-Host': 'americanfootballapi.p.rapidapi.com'
     }
   };
