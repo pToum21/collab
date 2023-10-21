@@ -49,13 +49,13 @@ function oddsGetter(teamName) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+
       for (let i = 0; i < data.length; i++) {
 
         if (teamName === data[i].home_team || teamName === data[i].away_team) {
 
           teamOne.textContent = data[i].bookmakers[1].markets[0].outcomes[0].name;
-          console.log(teamOne)
+
           teamTwo.textContent = data[i].bookmakers[1].markets[0].outcomes[1].name;
           teamOneOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[0].point;
           teamTwoOddsEl.textContent = data[i].bookmakers[1].markets[0].outcomes[1].point;
@@ -135,7 +135,7 @@ function logoGetter() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+
 
     })
     .catch(function (error) {
@@ -156,15 +156,14 @@ function scoreGetter(gameId) {
     })
     .then(function (data) {
 
-      console.log(data)
+
       for (i = 0; i < data.length; i++) {
         if (gameId === data[i].id) {
           if (data[i].completed) {
             return
           }
           displayLiveScores(data[i].scores[0].score, data[i].scores[1].score);
-          console.log(data[i].scores[0].score);
-          console.log(data[i].scores[1].score);
+
         }
       }
 
